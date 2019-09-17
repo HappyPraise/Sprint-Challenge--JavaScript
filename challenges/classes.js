@@ -1,25 +1,20 @@
 // 1. Copy and paste your prototype in here and refactor into class syntax.
 class CuboidMaker {
- constructor(length, width, height) {
-	this.length = length;
-	this.width = width;
-	this.height = height;
+ constructor(attribute) {
+	this.length = attribute.length;
+	this.width = attribute.width;
+	this.height = attribute.height;
 	}
 
- get volume() {
+ volume() {
  	return this.length * this.width * this.height;
  }
-get surfaceArea() {
+ surfaceArea() {
 	return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
  }
 } 
 
-const cuboid = new CuboidMaker ({
- 	diimension:{
-      length: 4,
-      width: 5,
-      height: 5}
-    });
+const cuboid = new CuboidMaker(4, 5, 5)
 
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
