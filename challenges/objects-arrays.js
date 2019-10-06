@@ -119,11 +119,13 @@ const zooAnimals = [
 
 /* Request 1: .forEach()
 
-The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
+The zoo wants to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
 const displayNames = [];
-
+zooAnimals.forEach(displayNames => {
+ names.push(`Name ${displayNames.animal_name} Scientific ${displayNames.scientific_name}.`);
+})
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -133,9 +135,7 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 const lowCaseAnimalNames = [];
-zooAnimals.map(function(item){
-  return lowCaseAnimalNames.push(item.animal_name.tolowerCase());
-});
+const zoo = zooAnimals.map(name => name.animal_name.toLowerCase()); 
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -144,6 +144,7 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 const lowPopulationAnimals = [];
+const pop = zooAnimals.filter(animal => animal.population < 5);
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -151,21 +152,10 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-const populationTotal = 0;
-let num = [];
-for ( i = 0; i < zooAnimals.length; i++){
-  console.log(zooAnimals[i].population);
-  num.push(zooAnimals[i].population);
-}
-
-console.log(num);
-
-function getSum(total, numb) {
-  return total + numb
-}
-
-num.reduce(getSum);
-
+const populationTotal = [];
+const total = populationTotal = zooAnimals.reduce(function(totalAnimals, item) {
+  return totalAnimals + item.population;
+}, 0)
 console.log(populationTotal);
 
 

@@ -29,14 +29,25 @@ Demonstrate your understanding of this week's concepts by answering the followin
 Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your team lead
 
 1. Describe the biggest difference between `.forEach` & `.map`.
+foreach iterates over a list and applies some operation with side effects to each list member (such as saving each one to the database for example)
+map iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (such as converting a list of strings to uppercase)
 
 2. What is the difference between a function and a method?
+‘function’ relates to a program component that is required to perform a specific task that it ‘knows’ how to perform.  The function takes up an input, does some internal calculations to the input, and then provides a final result, with a change to the naming properties.  The main benefit of using a function in programming is that it can be repetitively used to perform different tasks, and does not need reprogramming, as they are expected to return a value.
+
+‘Methods’, on the other hand, are blocks of code which are created to contain a series of statements. These statements will be executed following a program initiating any of the arguments defined in the methods. Below are the differences that have been observed between these two common programming statements.
 
 3. What is closure?
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 4. Describe the four rules of the 'this' keyword.
+ 1. Whenever a function is contained in the global scope, the value of this inside of that function will be the window object.
+ 2. Whenever a function is called by a preceding dot, the object before that dot is this.
+ 3. Whenever a constructor function is used, this refers to the specific instance of the object that is created and returned by the constructor function.
+ 4. Whenever JavaScript’s call or apply method is used, this is explicitly defined.
 
 5. Why do we need super() in an extended class?
+super keyword is used to call functions on an object's parent, when used in a constructor, the super keyword appears alone and must be used before the this keyword can be used. This keyword can also be used to call functions on a parent object.
 
 ## Project Set up
 
